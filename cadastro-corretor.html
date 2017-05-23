@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro Usuário</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-    <form>
+    <form id="formCorretor">
         <label for="email">Email:</label><br>
-        <input type="text" name="email" id="email"><br>
+        <input type="text" name="email" id="email" required><br>
         <label for="nome">Nome:</label><br>
         <input type="text" name="nome" id="nome"><br>
         <label for="sobrenome">Sobrenome:</label><br>
@@ -17,7 +20,7 @@
         <label for="creci">CRECI:</label><br>
         <input type="text" name="creci" id="creci"><br>
         <br>
-        <input type="submit" value="Cadastrar">
+        <input type="submit" id="submitCorretor" value="Cadastrar">
     </form>
 </body>
 </html>
