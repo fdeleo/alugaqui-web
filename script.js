@@ -4,6 +4,7 @@ $(document).ready(function() {
 
         var corretor = {};
         corretor['email'] = $( "#email" ).val();
+        corretor['senha'] = $( "#senha" ).val();
         corretor['nome'] = $( "#nome" ).val();
         corretor['sobrenome'] = $( "#sobrenome" ).val();
         corretor['celular'] = $( "#celular" ).val();
