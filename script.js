@@ -13,7 +13,7 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             url: "http://localhost:8080/corretor",
-            data:JSON.stringify(corretor),
+            data: JSON.stringify(corretor),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(){
@@ -30,6 +30,32 @@ $(document).ready(function() {
         $( "#submitCorretor" ).prop('disabled', true);
 
         event.preventDefault();
+    });
+
+    $( "#btn-busca-imoveis" ).click(function () {
+
+        var busca = $( "#busca-imoveis" ).val();
+
+        $.ajax({
+            type: "GET",
+            url: "http://localhost:8080/buscar-imoveis?busca=" + busca,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data){
+
+                var $resultado = $( "#resultado-busca" );
+
+                $resultado.empty();
+
+                for(var i=0; i < data.length; i++) {
+                    var imovel = "<li>" + JSON.stringify(data[i]) + "</li>";
+                    $resultado.append(imovel)
+                }
+            },
+            failure: function(errMsg) {
+                alert(errMsg);
+            }
+        });
     });
 
 });
