@@ -19,10 +19,12 @@ $(document).ready(function() {
             success: function(){
                 alert("Cadastro realizado");
                 $( "#submitCorretor" ).prop('disabled', false);
-                $( "#formCorretor" ).reset();
-
+                $( "#formCorretor" )[0].reset();
             },
-            failure: function(errMsg) {alert(errMsg);}
+            failure: function(errMsg) {
+                alert(errMsg);
+                $( "#submitCorretor" ).prop('disabled', false);
+            }
         });
 
         $( "#submitCorretor" ).prop('disabled', true);
