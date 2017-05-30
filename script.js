@@ -31,6 +31,38 @@ $(document).ready(function() {
 
         event.preventDefault();
     });
+    
+    $( "#formCliente" ).submit(function( event ) {
+
+        var cliente = {};
+        cliente['email'] = $( "#email" ).val();
+        cliente['senha'] = $( "#senha" ).val();
+        cliente['nome'] = $( "#nome" ).val();
+        cliente['sobrenome'] = $( "#sobrenome" ).val();
+        cliente['celular'] = $( "#celular" ).val();
+        cliente['cpf'] = $( "#cpf" ).val();
+
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/cliente",
+            data: JSON.stringify(cliente),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(){
+                alert("Cadastro realizado");
+                $( "#submitCliente" ).prop('disabled', false);
+                $( "#formCliente" )[0].reset();
+            },
+            failure: function(errMsg) {
+                alert(errMsg);
+                $( "#submitCliente" ).prop('disabled', false);
+            }
+        });
+
+        $( "#submitCliente" ).prop('disabled', true);
+
+        event.preventDefault();
+    });
 
     $( "#btn-busca-imoveis" ).click(function () {
 
