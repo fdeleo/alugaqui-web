@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/corretor",
+            url: "http://localhost:8080/corretores",
             data: JSON.stringify(corretor),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -21,8 +21,8 @@ $(document).ready(function() {
                 $( "#submitCorretor" ).prop('disabled', false);
                 $( "#formCorretor" )[0].reset();
             },
-            failure: function(errMsg) {
-                alert(errMsg);
+            error: function () {
+                alert("Erro!");
                 $( "#submitCorretor" ).prop('disabled', false);
             }
         });
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/cliente",
+            url: "http://localhost:8080/clientes",
             data: JSON.stringify(cliente),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
@@ -53,9 +53,9 @@ $(document).ready(function() {
                 $( "#submitCliente" ).prop('disabled', false);
                 $( "#formCliente" )[0].reset();
             },
-            failure: function(errMsg) {
-                alert(errMsg);
-                $( "#submitCliente" ).prop('disabled', false);
+            error: function () {
+                alert("Erro!");
+                $( "#submitCorretor" ).prop('disabled', false);
             }
         });
 
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/buscar-imoveis?busca=" + busca,
+            url: "http://localhost:8080/imoveis/busca/" + busca,
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(data){
@@ -84,8 +84,8 @@ $(document).ready(function() {
                     $resultado.append(imovel)
                 }
             },
-            failure: function(errMsg) {
-                alert(errMsg);
+            error: function() {
+                alert("Erro!");
             }
         });
     });
