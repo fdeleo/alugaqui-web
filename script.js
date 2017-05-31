@@ -55,7 +55,7 @@ $(document).ready(function() {
             },
             error: function () {
                 alert("Erro!");
-                $( "#submitCorretor" ).prop('disabled', false);
+                $( "#submitCliente" ).prop('disabled', false);
             }
         });
 
