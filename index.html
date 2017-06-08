@@ -2,34 +2,44 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>AlugAqui</title>
 
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="div-login">
-        <label for="email-login">Email:</label>
-        <input type="email" id="email-login"/>
-        <label for="pass-login">Senha:</label>
-        <input type="password" id="pass-login"/>
-        <button id="btn-login">Entrar</button>
+    <div class="container">
+
+        <form id="id-form-login" class="form-inline">
+            <div class="form-group">
+                <label for="email-login">Email:</label>
+                <input type="email" id="email-login"/>
+            </div>
+            <div class="form-group">
+                <label for="pass-login">Senha:</label>
+                <input type="password" id="pass-login"/>
+            </div>
+            <button id="btn-login" type="submit" class="btn btn-primary">Entrar</button>
+            <br>
+        </form>
+
         <br>
+
+        <a href="cadastro-corretor.html">Cadastrar corretor</a><br>
+        <a href="cadastro-cliente.html">Cadastrar cliente</a><br>
+
+        <br>
+
+        <label for="busca-imoveis">Buscar imóveis:</label><br>
+        <input type="search" name="busca-imoveis" id="busca-imoveis"/>
+        <button id="btn-busca-imoveis">Buscar</button>
+
+        <ul id="resultado-busca">
+
+        </ul>
     </div>
-
-    <br>
-
-    <a href="cadastro-corretor.html">Cadastrar corretor</a><br>
-    <a href="cadastro-cliente.html">Cadastrar cliente</a><br>
-
-    <br>
-
-    <label for="busca-imoveis">Buscar imóveis:</label><br>
-    <input type="search" name="busca-imoveis" id="busca-imoveis"/>
-    <button id="btn-busca-imoveis">Buscar</button>
-
-    <ul id="resultado-busca">
-
-    </ul>
 
     <script type="text/javascript" src="script.js"></script>
 </body>
